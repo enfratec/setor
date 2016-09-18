@@ -19,15 +19,13 @@ SETOR is available directly from `PyPI`_:
 Features
 ------------
 
-- Single URL
+- Single URL - Visit to single url.
 
-- Multiple URL's
-  Processing multiple url's/links.
+- Multiple URL's - Visit to multiple url's/links.
 
-- Logs *(Rename the log every midnight)*
-  If you need to save as log.
+- Logs *(Rename the log every midnight)* if you need to save as log to ``/var/logs/setor``.
 
-- Already detected by **goo.gl** and **bit.ly**
+- Already detected by **goo.gl** and **bit.ly**.
 
 
 Usage

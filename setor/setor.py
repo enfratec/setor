@@ -17,7 +17,7 @@ import userAgents
 
 # Path to save the logs.
 # If not exists, doing to create.
-log_path = 'logs'
+log_path = '/var/logs/setor'
 if not os.path.exists(log_path):
     os.makedirs(log_path)
 
@@ -88,11 +88,10 @@ def functionLogger(file_level, console_level=None):
 log_logger = functionLogger(logging.DEBUG, logging.ERROR)
 
 
-def visitLink(link, log_choice):
+def visitLink(link, log_choice, host_conf, port_conf):
     Banner()
     try:
-        #Default setup TOR for HOST & PORT
-        socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS4, '127.0.0.1', 9050, True)
+        socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS4, host_conf, port_conf, True)
         socket.socket = socks.socksocket
         time.sleep(0.5)
         opener = urllib2.build_opener()
@@ -125,7 +124,7 @@ def visitLink(link, log_choice):
         if log_choice == True:
             log_logger.info("{} - {}".format(e, link))
 
-    except socks.Socks4Error as e:
+    except socks.SOCKS4Error as e:
         print "{}[i] {} - {}{}".format(YELLOW, e, link, END_COLOR)
         if log_choice == True:
             log_logger.info("{} - {}".format(e, link))
@@ -148,6 +147,18 @@ def main():
     Banner()
     print """{} // OPTIONS:{}\n A. Single Link\n B. Multiple Links\n""".format(GREEN, END_COLOR)
     choice = raw_input("{}[+]{} Type your choice [a/B]: ".format(GREEN, END_COLOR))
+
+    host_input = raw_input("{}[+]{} Host TOR (Enter to set default: 127.0.0.1): ".format(GREEN, END_COLOR))
+    port_input = raw_input("{}[+]{} Port TOR (Enter to set default: 9050): ".format(GREEN, END_COLOR))
+
+    host_conf = '127.0.0.1'
+    port_conf = 9050
+
+    if host_input != '':
+        host_conf = host_input
+    if port_input != '':
+        port_conf = int(port_input)
+
     if choice.lower() == 'a':
         inp_single_link = raw_input("{}[+]{} Paste your single link: ".format(GREEN, END_COLOR))
 
@@ -157,7 +168,7 @@ def main():
 
         try:
             while True:
-                visitLink(inp_single_link, log_choice)
+                visitLink(inp_single_link, log_choice, host_conf, port_conf)
         except KeyboardInterrupt:
             print "{}[-] Finished!{}".format(YELLOW, END_COLOR)
             sys.exit()
@@ -173,7 +184,7 @@ def main():
         try:
             while True:
                 for link in urls:
-                    visitLink(link, log_choice)
+                    visitLink(link, log_choice, host_conf, port_conf)
         except KeyboardInterrupt:
             print "{}[-] Finished!{}".format(YELLOW, END_COLOR)
             sys.exit()

@@ -7,10 +7,10 @@ from setuptools import setup
 setup(
     name="setor",
     packages=['setor'],
-    version="1.3",
+    version="1.4",
     platforms=['Linux'],
     url='https://github.com/agusmakmun/setor/',
-    download_url='https://github.com/agusmakmun/setor/tarball/v1.3',
+    download_url='https://github.com/agusmakmun/setor/tarball/v1.4',
     description="Bot TOR to visit the webpages with unique IP's and random times.",
     long_description=open("README.rst").read(),
     license='MIT',
