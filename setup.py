@@ -4,29 +4,28 @@
 import os
 from setuptools import setup
 
-path = os.path.abspath(os.path.dirname(__file__))
-try:
-    LONG_DESCRIPTION = open(os.path.join(path, 'README.rst')).read()
-except IOError:
-    LONG_DESCRIPTION = ''
+def read(fname):
+    with open(fname) as fp:
+        content = fp.read()
+    return content
 
 setup(
-    name              = "setor",
-    packages          = ['setor'],
-    version           = "1.0",
-    platforms         = ['Linux'],
-    url               = 'https://github.com/agusmakmun/setor/',
-    download_url      = 'https://github.com/agusmakmun/setor/tarball/v1.0',
-    description       = "SETOR (SEO TOR) - Bot TOR to visit the webpages with unique IP's and random times.",
-    long_description  = LONG_DESCRIPTION,
-    license           = 'MIT',
-    author            = 'Agus Makmun (Summon Agus)',
-    author_email      = 'ags@dracos-linux.id',
-    keywords          = ['SETOR', 'SEO TOR', 'Bot TOR'],
+    name="setor",
+    packages=['setor'],
+    version="1.0",
+    platforms=['Linux'],
+    url='https://github.com/agusmakmun/setor/',
+    download_url='https://github.com/agusmakmun/setor/tarball/v1.0',
+    description="Bot TOR to visit the webpages with unique IP's and random times.",
+    long_description=read('README.rst'),
+    license='MIT',
+    author='Agus Makmun (Summon Agus)',
+    author_email='ags@dracos-linux.id',
+    keywords=['SETOR', 'SEO TOR', 'Bot TOR'],
     entry_points={
         'console_scripts': ['setor=setor.setor:main',],
     },
-    classifiers       = [
+    classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX :: Linux',
@@ -36,5 +35,5 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: System :: Networking'
-    ],
+    ]
 )
