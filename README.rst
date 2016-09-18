@@ -1,17 +1,23 @@
+SETOR: SEO TOR
+====================================
+
+SETOR is a Bot TOR to visit the webpages with unique IP's and random times.
+
 .. image:: https://github.com/agusmakmun/setor/blob/master/screenshot/setor.png
 
+
 Install
--------
+------------
 
-SETOR is available directly from PyPI_:
+SETOR is available directly from `PyPI`_:
 
-.. code-block:: sh
+::
 
     $ pip install setor
 
 
 Features
--------
+------------
 
 - Single URL
 
@@ -25,15 +31,15 @@ Features
 
 
 Usage
--------
+------------
 
     I think common people know how to use it, especially if you are a Linux User.
 
 
 License
--------
+------------
 
-- MIT_
+- `MIT`_
 
 
 .. _PyPI: https://pypi.python.org/pypi/setor

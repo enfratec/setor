@@ -4,20 +4,15 @@
 import os
 from setuptools import setup
 
-def read(fname):
-    with open(fname) as fp:
-        content = fp.read()
-    return content
-
 setup(
     name="setor",
     packages=['setor'],
-    version="1.0",
+    version="1.2",
     platforms=['Linux'],
     url='https://github.com/agusmakmun/setor/',
-    download_url='https://github.com/agusmakmun/setor/tarball/v1.0',
+    download_url='https://github.com/agusmakmun/setor/tarball/v1.2',
     description="Bot TOR to visit the webpages with unique IP's and random times.",
-    long_description=read('README.rst'),
+    long_description=open("README.rst").read(),
     license='MIT',
     author='Agus Makmun (Summon Agus)',
     author_email='ags@dracos-linux.id',
