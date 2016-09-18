@@ -3,7 +3,7 @@ SETOR: SEO TOR
 
 SETOR is a Bot TOR to visit the webpages with unique IP's and random times.
 
-.. image:: https://github.com/agusmakmun/setor/blob/master/screenshot/setor.png
+.. image:: https://raw.githubusercontent.com/agusmakmun/setor/master/screenshot/setor.png
 
 
 Install
@@ -13,7 +13,7 @@ SETOR is available directly from `PyPI`_:
 
 ::
 
-    $ pip install setor
+    $ sudo pip install setor
 
 
 Features

@@ -7,10 +7,10 @@ from setuptools import setup
 setup(
     name="setor",
     packages=['setor'],
-    version="1.2",
+    version="1.3",
     platforms=['Linux'],
     url='https://github.com/agusmakmun/setor/',
-    download_url='https://github.com/agusmakmun/setor/tarball/v1.2',
+    download_url='https://github.com/agusmakmun/setor/tarball/v1.3',
     description="Bot TOR to visit the webpages with unique IP's and random times.",
     long_description=open("README.rst").read(),
     license='MIT',
@@ -20,6 +20,7 @@ setup(
     entry_points={
         'console_scripts': ['setor=setor.setor:main',],
     },
+    install_requires=['PySocks==1.5.7'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
