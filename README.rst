@@ -33,7 +33,7 @@ Usage
 License
 -------
 
-- **MIT_**
+- ** MIT_ **
 
 
 .. _PyPI: https://pypi.python.org/pypi/setor
